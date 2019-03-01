@@ -8,18 +8,18 @@ if( process.argv.length != 3 ) {
     return;
 }
 
-const VOWELS = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+// List could expand
+const VOWELS = ['a', 'e', 'i', 'o', 'u', 
+                'A', 'E', 'I', 'O', 'U'];
 
 fs.readFile(process.argv[2], 'utf8', (error, data) => {
     if(error) throw error;
-    console.log(data);
+    
     let inputLines = data.split('\n');
     inputLines.forEach((line) => {
         // if a vowel isn't even in the word, we aren't going to check it. 
         let vowelsIcanCheck = filterVowels(line);
         let counter = 0;
-
-        console.log(vowelsIcanCheck);
 
         for(let i=0; i < line.length; i++) {
 
@@ -41,10 +41,9 @@ fs.readFile(process.argv[2], 'utf8', (error, data) => {
 
 function filterVowels(word) {
     return VOWELS.filter((vowel) => {
-        if(word.indexOf(vowel) !== -1) {
+        if(word.indexOf(vowel) !== -1) 
             return true;
-        } else {
+        else
             return false;
-        }
     });
 }
