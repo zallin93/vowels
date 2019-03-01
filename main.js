@@ -23,7 +23,7 @@ fs.readFile(process.argv[2], 'utf8', (error, data) => {
 
         for(let i=0; i < line.length; i++) {
 
-            for(let j=i; j < line.length; j++) {
+            for(let j=i; j <= line.length; j++) {
                 vowelsIcanCheck.forEach( (vowel) => {
                     if( line.substring(i,j).indexOf(vowel) !== -1 ) {
                         counter++;
