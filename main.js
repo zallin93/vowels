@@ -16,16 +16,21 @@ fs.readFile(process.argv[2], 'utf8', (error, data) => {
     let inputLines = data.split('\n');
     inputLines.forEach((line) => {
         // if a vowel isn't even in the word, we aren't going to check it. 
-        let vowelsIcanCheck = VOWELS.filter((vowel) => {
-            if(line.contains(vowel)) {
-                return true;
-            } else {
-                return false;
-            }
-        });
+        let vowelsIcanCheck = filterVowels(line);
 
+        console.log(vowelsIcanCheck);
 
 
     });
 });
 
+
+function filterVowels(word) {
+    return VOWELS.filter((vowel) => {
+        if(word.indexOf(vowel) !== -1) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+}
