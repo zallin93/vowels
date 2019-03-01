@@ -1,10 +1,31 @@
 'use strict';
-
 const fs = require('fs');
 
-console.log('Test me');
+// verify # of params coming in
+if( process.argv.length != 3 ) {
+    console.error('Incorrect # of params. \nProper usage: node main.js [input-file]');
+    process.exitCode = 1;
+    return;
+}
+
+const VOWELS = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
 
 fs.readFile(process.argv[2], 'utf8', (error, data) => {
     if(error) throw error;
     console.log(data);
+    let inputLines = data.split('\n');
+    inputLines.forEach((line) => {
+        // if a vowel isn't even in the word, we aren't going to check it. 
+        let vowelsIcanCheck = VOWELS.filter((vowel) => {
+            if(line.contains(vowel)) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+
+
+    });
 });
+
