@@ -39,6 +39,10 @@ fs.readFile(process.argv[2], 'utf8', (error, data) => {
 });
 
 
+/**
+ * Helper function to shorten the search keys, if possible.
+ * @return array of chars
+ */
 function filterVowels(word) {
     return VOWELS.filter((vowel) => {
         if(word.indexOf(vowel) !== -1) 
