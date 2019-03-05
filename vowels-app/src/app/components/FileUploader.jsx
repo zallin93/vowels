@@ -5,13 +5,9 @@ class FileUploader extends React.Component {
     constructor(props) {
         super(props);
         this.handleChangeFunc = this.handleChangeFunc.bind(this);
-        this.state = {
-            file: ''
-        };
     }
 
     handleChangeFunc(e) {
-        console.log('e', e);
         let curFile = e.target.files[0];
         let reader = new FileReader();
         reader.onload = e => {
@@ -22,9 +18,6 @@ class FileUploader extends React.Component {
         };
         
         reader.readAsText(curFile, 'utf8');
-        this.setState({
-            file: curFile
-        });
     }
 
     render() {
