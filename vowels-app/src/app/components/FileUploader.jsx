@@ -15,6 +15,7 @@ class FileUploader extends React.Component {
         let reader = new FileReader();
         reader.onload = e => {
             let lines = reader.result;
+            
             console.log('lines', lines);
         };
         
