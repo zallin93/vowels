@@ -1,4 +1,5 @@
 import React from 'react';
+import {countVowels} from '../../../../utils';
 
 class FileUploader extends React.Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class FileUploader extends React.Component {
         reader.onload = e => {
             let lines = reader.result.split('\n');
             lines.forEach((line) => {
-                console.log('lines', lines);    
+                countVowels(line);
             });
         };
         
