@@ -4,11 +4,13 @@ import {countVowels} from 'vowels-util';
 class FileUploader extends React.Component {
     constructor(props) {
         super(props);
-        this.handleChangeFunc = this.handleChangeFunc.bind(this);
+        this.handleUploadFunc = this.handleUploadFunc.bind(this);
     }
 
-    handleChangeFunc(e) {
-        let curFile = e.target.files[0];
+    handleUploadFunc(e) {
+        e.preventDefault();
+
+        let curFile = this.fileInput.files[0];
         let reader = new FileReader();
         reader.onload = e => {
             let lines = reader.result.split('\n');
@@ -23,7 +25,8 @@ class FileUploader extends React.Component {
     render() {
         return (
             <div>
-                <input type='file' onChange={this.handleChangeFunc} />
+                <input type='file' ref={(ref) => {this.fileInput = ref;}} />
+                <button type='button' onClick={this.handleUploadFunc} >Submit</button>
             </div>
         );
     }
