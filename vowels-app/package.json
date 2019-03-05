@@ -5,9 +5,11 @@
   "dependencies": {
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "vowels-util": "file:../vowels-util"
   },
   "scripts": {
+    "preinstall": "npm install ../vowels-util",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

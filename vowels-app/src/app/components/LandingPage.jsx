@@ -8,7 +8,7 @@ class LandingPage extends React.Component {
     render() {
         return (
             <div>
-                Upload your file here!
+                Upload your file here, then see the vowel counts in the Console!
                 <FileUploader />
             </div>
         );
