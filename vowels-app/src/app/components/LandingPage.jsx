@@ -1,9 +1,9 @@
 import React from 'react';
-import FileUploader from 'src/app/components/FileUploader';
+import FileUploader from '../../app/components/FileUploader';
 
 class LandingPage extends React.Component {
 
-    
+
 
     render() {
         return (
