@@ -14,9 +14,10 @@ class FileUploader extends React.Component {
         let curFile = e.target.files[0];
         let reader = new FileReader();
         reader.onload = e => {
-            let lines = reader.result;
-            
-            console.log('lines', lines);
+            let lines = reader.result.split('\n');
+            lines.forEach((line) => {
+                console.log('lines', lines);    
+            });
         };
         
         reader.readAsText(curFile, 'utf8');
