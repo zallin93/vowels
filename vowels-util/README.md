@@ -22,3 +22,8 @@ import { countVowels } from 'vowels-util';
 countVowels('aabbccddee');
 ```
 
+
+## Updating the "vowels" list
+
+To update the list of characters that count as vowels, 
+modify the list in `config.js`. 
