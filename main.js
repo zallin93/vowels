@@ -1,6 +1,6 @@
 'use strict';
 const fs = require('fs');
-const Utils = require('./utils.js');
+const Utils = require('./vowels-util');
 
 // verify # of params coming in
 if( process.argv.length != 3 ) {
