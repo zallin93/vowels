@@ -11,15 +11,16 @@ npm install -s vowels-util
 
 
 The primary function is `countVowels`. Import/require it into your project as 
-necessary.  The function accepts a single string parameter and print the result
-on the Console.
+necessary.  The function accepts a single string parameter and returns number 
+of vowels in the string, as an integer. 
 
 ```
 import { countVowels } from 'vowels-util';
 
 ...
 
-countVowels('aabbccddee');
+let numVowels = countVowels('aabbccddee');
+console.log(numVowels);
 ```
 
 
