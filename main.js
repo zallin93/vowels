@@ -14,6 +14,6 @@ fs.readFile(process.argv[2], 'utf8', (error, data) => {
     
     let inputLines = data.split('\n');
     inputLines.forEach((line) => {
-        Utils.countVowels(line);
+        console.log( Utils.countVowels(line) );
     });
 });

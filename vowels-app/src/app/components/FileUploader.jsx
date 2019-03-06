@@ -15,7 +15,7 @@ class FileUploader extends React.Component {
         reader.onload = e => {
             let lines = reader.result.split('\n');
             lines.forEach((line) => {
-            countVowels(line);
+                console.log( countVowels(line) );
             });
         };
         
