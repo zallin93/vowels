@@ -19,6 +19,7 @@ function countVowels(line) {
 
     // print the count
     console.log(counter);
+    return counter;
 };
 
 /**
