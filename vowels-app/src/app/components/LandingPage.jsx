@@ -21,7 +21,6 @@ class LandingPage extends React.Component {
         let self = this;
         reader.onload = (e) => {
             let lines = reader.result.split('\n');
-            console.log('resultsCO', this.state.resultCounts);
             let resultArray = this.state.resultCounts;
             lines.forEach((line) => {
                 console.log('resultsArray', resultArray);
@@ -51,7 +50,6 @@ class LandingPage extends React.Component {
             </div>
         );
     }
-    
 };
 
 export default LandingPage;
