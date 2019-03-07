@@ -1,32 +1,22 @@
 import React from 'react';
-import {countVowels} from 'vowels-util';
+
 
 class FileUploader extends React.Component {
     constructor(props) {
         super(props);
-        this.handleUploadFunc = this.handleUploadFunc.bind(this);
+        this.submitFunc = this.submitFunc.bind(this);
     }
 
-    handleUploadFunc(e) {
+    submitFunc(e) {
         e.preventDefault();
-
-        let curFile = this.fileInput.files[0];
-        let reader = new FileReader();
-        reader.onload = e => {
-            let lines = reader.result.split('\n');
-            lines.forEach((line) => {
-                console.log( countVowels(line) );
-            });
-        };
-        
-        reader.readAsText(curFile, 'utf8');
+        this.props.handleUploadFunc(this.fileInput.files[0]);
     }
 
     render() {
         return (
             <div>
                 <input type='file' ref={(ref) => {this.fileInput = ref;}} />
-                <button type='button' onClick={this.handleUploadFunc} >Submit</button>
+                <button type='button' onClick={this.submitFunc} disabled={!this.props.isSubmitEnabled}>Submit</button>
             </div>
         );
     }
