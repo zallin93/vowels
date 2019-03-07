@@ -1,36 +1,23 @@
-const {VOWELS} = require('./config.js');
+const {VOWEL_REGEX} = require('./config.js');
 
 function countVowels(line) {
-    // if a vowel isn't even in the word, we aren't going to check it. 
-    let vowelsIcanCheck = filterVowels(line);
     let counter = 0;
 
     for(let i=0; i < line.length; i++) {
 
         for(let j=i; j <= line.length; j++) {
-            vowelsIcanCheck.forEach( (vowel) => {
-                if( line.substring(i,j).indexOf(vowel) !== -1 ) {
-                    counter++;
-                }
-            }); 
-            
+            counter += count(line.substring(i,j));        
         }
     }
     
     return counter;
 };
 
-/**
- * Helper function to shorten the search keys, if possible.
- * @return array of chars
+/** 
+ * Helper function that returns the number of vowels in a single string.
  */
-function filterVowels(word) {
-    return VOWELS.filter((vowel) => {
-        if(word.indexOf(vowel) !== -1) 
-            return true;
-        else
-            return false;
-    });
+function count(testWord) {
+    return (testWord.match(VOWEL_REGEX) || []).length;
 }
 
 module.exports = {countVowels};
