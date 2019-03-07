@@ -4,7 +4,7 @@ const {VOWEL_REGEX} = require('./config.js');
  * Main function, returns the number of occurences of vowels in all
  * substrings of the input. 
  *
- * Complexity is O(n^2), aka not so good for larger inputs, 
+ * Complexity is O(n^3), aka not so good for larger inputs, 
  * like `inputs/large.txt`.  There may be a better methodology. 
  *
  * Next step would be to put a restriction on it, likely based on character 
