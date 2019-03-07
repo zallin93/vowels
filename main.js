@@ -9,6 +9,12 @@ if( process.argv.length != 3 ) {
     return;
 }
 
+/**
+ * 1. Read the file. 
+ * 2. Parse the file based on 'newline'. 
+ * 3. For each line of input, call the util function to count, 
+ *    print to the console.
+ */
 fs.readFile(process.argv[2], 'utf8', (error, data) => {
     if(error) throw error;
     
